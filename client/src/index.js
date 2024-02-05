@@ -4,11 +4,24 @@ import './index.css';
 import "swiper/css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SearchResults from './views/SearchResults';
+import { createBrowserRouter, RouterProvider, } from 'react-router-dom'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App/>
+  },
+  {
+    path: '/search',
+    element: <SearchResults/>
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 );
 
